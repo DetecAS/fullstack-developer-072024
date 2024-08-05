@@ -1,0 +1,36 @@
+@inject NavigationManager Navigation; 
+@inherits ComponentBase; 
+@code {
+    [Parameter]
+    public List<User> Users { get; set; }
+
+    [Parameter]
+    public EventCallback<User> OnUserSelected { get; set; }
+
+ 
+    
+    private async Task SelectUser(User user)
+    {
+        await  OnUserSelected.InvokeAsync(user);
+        StateHasChanged();
+    }
+}
+<div class="container">
+    <h4 class="text-center">Users List</h4>
+    <hr width="100%" size="1">
+    <div class="row">
+        @foreach (var user in Users)
+        {
+            <div class="col-md-3 mb-3 ">
+                <div class="card h-100 " style="width: 70%;">
+                    <img class="card-img-top" src="images/user_profile.png" alt="Card image" style="width: 40%; margin: auto;">
+                    <div class="card-body " style="overflow-y: auto">
+                        <h5 class="card-title">@user.Name</h5>
+                        <p class="card-text">@user.Email</p>
+                        <button class="btn btn-primary" @onclick="() => SelectUser(user)">Details</button>
+                    </div>
+                </div>
+            </div>
+            
+        }</div>
+</div>

@@ -1,0 +1,39 @@
+@using BlazorAssessment.Models
+
+
+@if (SelectedUser != null)
+{
+    <!-- Bootstrap Modal -->
+    <div class="modal fade show" style="display:block" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">User Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Username: @SelectedUser.Name</p>
+                    <p>Email: @SelectedUser.Email</p>
+                    <p>Last Login: @SelectedUser.LastLoginDate.ToString("yyyy-MM-dd")</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}else{
+    <p>No user selected</p>
+}
+
+@code {
+    [Parameter]
+    public User SelectedUser { get; set; }
+    public void Close()
+    {
+        SelectedUser = null; // Clears the selected user to close the modal
+    }
+}

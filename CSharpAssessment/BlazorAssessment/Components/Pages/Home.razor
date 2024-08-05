@@ -1,0 +1,57 @@
+﻿@page "/"
+@using BlazorAssessment.Models
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<UserLists Users="users" OnUserSelected="UserSelected"/>
+
+<div class="container">
+    <h2>User Details</h2>
+    <hr width="100%" size="2">
+   
+    <UserDetails SelectedUser="@_SelectedUser"/>
+
+</div>
+@code {
+    private List<User> users { get; set; }
+    
+    private User _SelectedUser { get; set; }
+
+    private Random _random = new Random(); 
+    
+    // method for generating random date time
+    
+    private DateTime GenaratRandomDateTime()
+    {
+        DateTime start = new DateTime(1995, 1, 1);
+        int range = (DateTime.Today - start).Days;
+        return start.AddDays(_random.Next(range));
+    }
+    
+
+    protected override void OnInitialized()
+    {
+        users = new List<User>
+        {
+            new User { Name = "zekaria Mohamed", Email = "john@example.com", LastLoginDate = DateTime.Now.AddDays(-1) },
+            new User { Name = "zekaria Mohamed", Email = "john@example.com", LastLoginDate = DateTime.Now.AddDays(-1) },
+            new User { Name = "zekaria Mohamed", Email = "john@example.com", LastLoginDate = DateTime.Now.AddDays(-1) },
+            new User { Name = "zekaria Mohamed", Email = "john@example.com", LastLoginDate = DateTime.Now.AddDays(-1) },
+            new User { Name = "zekaria Mohamed", Email = "john@example.com", LastLoginDate = DateTime.Now.AddDays(-1) },
+            new User { Name = "zekaria Mohamed", Email = "john@example.com", LastLoginDate = DateTime.Now.AddDays(-1) },
+            
+            // Add more users here
+        };
+        Console.WriteLine("Users initialized");
+    }
+
+   
+    private void UserSelected(User user)
+    {
+        _SelectedUser = user; 
+        StateHasChanged();
+        
+    }
+}
+
