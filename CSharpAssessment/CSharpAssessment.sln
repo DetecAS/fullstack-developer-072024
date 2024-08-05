@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpAssessment", "CSharpA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpAssessment.Tests", "CSharpAssessment.Tests\CSharpAssessment.Tests.csproj", "{FF4883F1-F830-44F9-8C18-CAEC7243AC62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAssessment", "BlazorAssessment\BlazorAssessment.csproj", "{02235042-8F43-444A-84B0-9FCEA2DE19F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{FF4883F1-F830-44F9-8C18-CAEC7243AC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF4883F1-F830-44F9-8C18-CAEC7243AC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF4883F1-F830-44F9-8C18-CAEC7243AC62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02235042-8F43-444A-84B0-9FCEA2DE19F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02235042-8F43-444A-84B0-9FCEA2DE19F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02235042-8F43-444A-84B0-9FCEA2DE19F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02235042-8F43-444A-84B0-9FCEA2DE19F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
